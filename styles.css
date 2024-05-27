@@ -22,3 +22,6 @@ body {
   th, td {
     border-bottom: 1px solid black;
   }
+  tr:hover {
+    background-color: #D6EEEE;
+  }
