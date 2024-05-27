@@ -21,10 +21,11 @@ body {
   }
   table, th, td {
     border: 1px solid black;
-    /* border-collapse: collapse; */
-    border-radius: 10px;
-    border-style: dotted;
+    border-collapse: collapse;
+    /* border-radius: 10px;
+    border-style: dotted; */
   }
   th, td {
-    background-color: chocolate;
+    /* background-color: chocolate; */
+    border-color: brown;
   }
