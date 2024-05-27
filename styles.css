@@ -28,4 +28,5 @@ body {
   th, td {
     /* background-color: chocolate; */
     border-color: brown;
+    padding: 15px;
   }
