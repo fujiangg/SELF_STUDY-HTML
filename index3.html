@@ -44,17 +44,22 @@
     <br>
     <h2>Use of The class Attribute in JavaScript</h2>
     <p>Click the button to hide all elements with class name "city":</p>
-
     <button onclick="myFunction()">Hide elements</button>
-
     <h2 class="city">London</h2>
     <p>London is the capital of England.</p>
-
     <h2 class="city">Paris</h2>
     <p>Paris is the capital of France.</p>
-
     <h2 class="city">Tokyo</h2>
     <p>Tokyo is the capital of Japan.</p>
+    <br>
+    <!-- /end class attribute -->
+    <!-- id attribute -->
+    <h1 id="idAttribute">id Attribute</h1>
+    <a href="#idAttribute">Jump to Chapter 4</a>
+    <h2>Using The id Attribute in JavaScript</h2>
+    <p>JavaScript can access an element with a specified id by using the getElementById() method:</p>
+    <h1 id="myHeader">Hello World!</h1>
+    <button onclick="displayResult()">Change text</button>
 
     <script>
         function myFunction() {
@@ -63,6 +68,11 @@
             x[i].style.display = "none";
         } 
     }
+    </script>
+    <script>
+        function displayResult() {
+          document.getElementById("myHeader").innerHTML = "Have a nice day!";
+        }
     </script>
 </body>
 </html>

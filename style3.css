@@ -9,7 +9,12 @@
     font-size: 120%;
     color: red;
 }
-  
 .main {
+    text-align: center;
+}
+#myHeader {
+    background-color: lightblue;
+    color: black;
+    padding: 40px;
     text-align: center;
 }
