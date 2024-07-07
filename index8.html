@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index 8</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .left {
+            background-color: blue;
+            padding: 20px;
+            float: left;
+            width: 20%;
+        }
+        .main {
+            background-color: aquamarine;
+            padding: 20px;
+            float: left;
+            width: 60%;
+        }
+        .right {
+            background-color: blue;
+            padding: 20px;
+            float: left;
+            width: 20%;
+        }
+        @media screen and (max-width: 800px){
+            .left, .main, .right {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Responsive Images -->
+    <h1>Responsive Images</h1>
     <img src="coffee.jpg" style="width: 100%;">
     <img src="coffee.jpg" style="max-width: 100%;height:auto;">
     <picture>
@@ -17,8 +46,21 @@
     </picture>
     <!-- /end Responsive Images -->
     <!-- Responsive Text Sizes -->
-    <h1 style="font-size:10vw">Hello World</h1>
+    <h1 style="font-size:10vw">Responsive Text Sizes</h1>
     <p style="font-size: 5vw;">This is responsive images</p>
     <!-- /end Responsive Text Sizes -->
+    <br>
+    <!-- Media Queries -->
+    <h2>Media Queries</h2>
+    <p>Resize the browser window</p>
+    <div class="left">
+        <p>Left Menu</p>
+    </div>
+    <div class="main">
+        <p>Main Content</p>
+    </div>
+    <div class="left">
+        <p>Right Content</p>
+    </div>
 </body>
 </html>
