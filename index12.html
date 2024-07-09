@@ -19,7 +19,7 @@
     </p>
     <!-- /end Emojis Example -->
     <!-- Form -->
-    <form action="" target="_blank" method="get" autocomplete="on" novalidate>
+    <form action="" target="_blank" method="get" autocomplete="on" novalidate oninput="x.value=parseInt(a.value)+parseInt(b.value)">
         <!-- label -->
         <label for="fname">First Name:</label>
         <!-- /end label -->
@@ -44,6 +44,7 @@
         <!-- button -->
         <button type="button" onclick="alert('You have clicked the button!')">Click Me!</button>
         <!-- /end button -->
+        <br>
         <!-- fieldset & legend -->
         <fieldset>
             <legend>Personalia:</legend>
@@ -54,7 +55,8 @@
             <input type="submit" value="Submit">
         </fieldset>
         <!-- /end fieldset & legend -->
-         <!-- datalist -->
+        <br>
+        <!-- datalist -->
         <input list="browsers">
         <datalist id="browsers">
             <option value="Edge">
@@ -64,6 +66,13 @@
             <option value="Safari">
         </datalist>
         <!-- /end datalist -->
+        <br><br>
+        <!-- output -->
+        <input type="range" id="a" name="a" value="50">+100&nbsp;
+        <input type="number" id="b" name="b" value="50"> = 
+        <output name="x" for="a b"></output>
+        <input type="submit">
+        <!-- /end output -->
     </form>
     <!-- /end Form -->
 </body>
