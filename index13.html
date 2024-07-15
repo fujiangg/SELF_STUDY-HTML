@@ -12,6 +12,7 @@
     <canvas id="myCanvaswithCircle" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <canvas id="myCanvaswithText" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <canvas id="myCanvaswithStrokeText" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+    <canvas id="myCanvaswithLinearGradient" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <!-- /end HTML Canvas -->
 
     <!-- JS | Draw a line -->
@@ -46,6 +47,19 @@
         var ctx = c.getContext("2d");
         ctx.font = "30px Arial";
         ctx.strokeText("Hello World", 10, 50);
+    </script>
+    <!-- /end -->
+    <!-- JS | Draw Linear Gradient -->
+    <script>
+        var c = document.getElementById("myCanvaswithLinearGradient");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 10, 150, 80);
     </script>
     <!-- /end -->
 </body>
