@@ -6,7 +6,19 @@
     <title>INDEX 13</title>
 </head>
 <body>
+    <!-- HTML Canvas -->
     <h1>HTML Canvas</h1>
-    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+    <canvas id="myCanvaswithLine" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+    <!-- /end HTML Canvas -->
+
+    <!-- JS | Draw a line -->
+    <script>
+        var c = document.getElementById("myCanvaswithLine");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+    </script>
+    <!-- /end -->
 </body>
 </html>
