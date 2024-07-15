@@ -9,6 +9,7 @@
     <!-- HTML Canvas -->
     <h1>HTML Canvas</h1>
     <canvas id="myCanvaswithLine" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+    <canvas id="myCanvaswithCircle" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <!-- /end HTML Canvas -->
 
     <!-- JS | Draw a line -->
@@ -17,6 +18,15 @@
         var ctx = c.getContext("2d");
         ctx.moveTo(0, 0);
         ctx.lineTo(200, 100);
+        ctx.stroke();
+    </script>
+    <!-- /end -->
+    <!-- JS | Draw a circle -->
+    <script>
+        var c = document.getElementById("myCanvaswithCircle");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
         ctx.stroke();
     </script>
     <!-- /end -->
