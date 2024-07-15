@@ -11,6 +11,7 @@
     <canvas id="myCanvaswithLine" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <canvas id="myCanvaswithCircle" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <canvas id="myCanvaswithText" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+    <canvas id="myCanvaswithStrokeText" width="200" height="100" style="border: 1px solid #000000;"></canvas>
     <!-- /end HTML Canvas -->
 
     <!-- JS | Draw a line -->
@@ -37,6 +38,14 @@
         var ctx = c.getContext("2d");
         ctx.font = "30px Arial";
         ctx.fillText("Hello World", 10, 50);
+    </script>
+    <!-- /end -->
+    <!-- JS | Draw a Stroke Text -->
+    <script>
+        var c = document.getElementById("myCanvaswithStrokeText");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.strokeText("Hello World", 10, 50);
     </script>
     <!-- /end -->
 </body>
