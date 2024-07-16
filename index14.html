@@ -94,6 +94,7 @@
     <!-- /end HTML Web Storage -->
 
     <br><br>
+    <br><br>
 
     <!-- Web Worker -->
     <h1>HTML Web Worker</h1>
@@ -101,6 +102,13 @@
     <button onclick="startWorker()">Start Worker</button>
     <button onclick="stopWorker()">Stop Worker</button>
     <!-- /end Web Worker -->
+
+    <br><br>
+    <br><br>
+
+    <!-- SSE -->
+    <h1>HTML SSE</h1>
+    <div id="SSEResult"></div>
 
     <script>
         const x = document.getElementById("demo");
@@ -163,6 +171,16 @@
         function stopWorker() {
           w.terminate();
           w = undefined;
+        }
+    </script>
+    <script>
+        if(typeof(EventSource) !== "undefined") {
+          var source = new EventSource("demo_sse.php");
+          source.onmessage = function(event) {
+            document.getElementById("SSEResult").innerHTML += event.data + "<br>";
+          };
+        } else {
+          document.getElementById("SSEResult").innerHTML = "Sorry, your browser does not support server-sent events...";
         }
     </script>
 </body> 
