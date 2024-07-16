@@ -29,6 +29,34 @@
           ev.target.appendChild(document.getElementById(data));
         }
     </script>
+    <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+              localStorage.clickcount = Number(localStorage.clickcount)+1;
+            } else {
+              localStorage.clickcount = 1;
+            }
+            document.getElementById("localStorageResult").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+          } else {
+            document.getElementById("localStorageResult").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+    </script>
+    <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+              sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+            } else {
+              sessionStorage.clickcount = 1;
+            }
+            document.getElementById("sessionStorageResult").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+          } else {
+            document.getElementById("sessionStorageResult").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+    </script>
 </head>
 <body>
     <h1>HTML Geolocation</h1>
@@ -44,6 +72,26 @@
         <img src="logo192.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
     </div>
     <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <br><br>
+    <br><br>
+
+    <!-- HTML Web Storage -->
+    <h1>HTML Web Storage</h1>
+    <div id="lastnameResult"></div>
+        <!-- Local Storage -->
+        <h2>Local Storage</h2>
+        <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+        <div id="localStorageResult"></div>
+        <p>Click the button to see the counter increase.</p>
+        <p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+        <!-- Session Storage -->
+        <h2>Session Storage</h2>
+        <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+        <div id="sessionStorageResult"></div>
+        <p>Click the button to see the counter increase.</p>
+        <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+    <!-- /end HTML Web Storage -->
 
     <script>
         const x = document.getElementById("demo");
@@ -76,6 +124,17 @@
                 x.innerHTML = "An unknown error occurred."
                 break;
             }
+        }
+    </script>
+    <script>
+        // Check browser support
+        if (typeof(Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("lastname", "Anggraeni");
+            // Retrieve
+            document.getElementById("lastnameResult").innerHTML = localStorage.getItem("lastname");
+        } else {
+            document.getElementById("lastnameResult").innerHTML = "Sorry, your browser does not support Web Storage...";
         }
     </script>
 </body> 
