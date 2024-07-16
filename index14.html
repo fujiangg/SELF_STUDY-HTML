@@ -93,6 +93,15 @@
         <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
     <!-- /end HTML Web Storage -->
 
+    <br><br>
+
+    <!-- Web Worker -->
+    <h1>HTML Web Worker</h1>
+    <p>Count numbers: <output id="workerResult"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <!-- /end Web Worker -->
+
     <script>
         const x = document.getElementById("demo");
         
@@ -135,6 +144,25 @@
             document.getElementById("lastnameResult").innerHTML = localStorage.getItem("lastname");
         } else {
             document.getElementById("lastnameResult").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    </script>
+    <script>
+        var w; 
+        function startWorker() {
+          if (typeof(Worker) !== "undefined") {
+            if (typeof(w) == "undefined") {
+              w = new Worker("demo_workers.js");
+            }
+            w.onmessage = function(event) {
+              document.getElementById("workerResult").innerHTML = event.data;
+            };
+          } else {
+            document.getElementById("workerResult").innerHTML = "Sorry! No Web Worker support.";
+          }
+        }
+        function stopWorker() {
+          w.terminate();
+          w = undefined;
         }
     </script>
 </body> 
